@@ -1,0 +1,11 @@
+transaction_id,date,vendor,amount,currency,description,reference
+B001,2023-10-01,Amazon India Pvt Ltd,15000.00,INR,Office Supplies,REF123
+B002,2023-10-02,Flipkart,8500.50,INR,Electronics,REF124
+B003,2023-10-03,Swiggy,1200.00,INR,Team Lunch,REF125
+B004,2023-10-04,Zomato,2500.00,INR,Client Dinner,REF126
+B005,2023-10-05,Reliance Digital,45000.00,INR,Laptops,REF127
+B006,2023-10-06,TCS,150000.00,INR,Consulting,REF128
+B007,2023-10-07,Microsoft,8500.00,INR,Software License,REF129
+B008,2023-10-08,Google Cloud,12500.00,INR,Hosting,REF130
+B009,2023-10-09,Amazon,2000.00,INR,Books,REF131
+B010,2023-10-10,Unknown Vendor,500000.00,INR,Suspicious,REF132

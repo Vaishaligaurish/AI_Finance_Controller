@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+pydantic-settings
+python-multipart
+pandas
+numpy
+rapidfuzz
+scikit-learn
+sentence-transformers
