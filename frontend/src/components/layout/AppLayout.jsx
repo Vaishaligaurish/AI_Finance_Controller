@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
 const AppLayout = ({ children }) => (
-  <div className="flex min-h-screen bg-gray-50">
+  <div className="flex min-h-screen bg-[#0f172a] text-slate-200">
     <Sidebar />
     <div className="flex-1 ml-64 flex flex-col">
       <Topbar />

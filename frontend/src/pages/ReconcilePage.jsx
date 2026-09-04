@@ -31,21 +31,47 @@ const ReconcilePage = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-sm border border-gray-200 mt-10">
-      <h2 className="text-2xl font-bold mb-6">New Reconciliation Run</h2>
-      <form onSubmit={handleUpload} className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Bank Transactions (CSV)</label>
-          <input type="file" accept=".csv" onChange={e => setBankFile(e.target.files[0])} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Ledger Transactions (CSV)</label>
-          <input type="file" accept=".csv" onChange={e => setLedgerFile(e.target.files[0])} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
-        </div>
-        <button type="submit" disabled={loading} className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50">
-          {loading ? 'Processing...' : 'Start Reconciliation'}
-        </button>
-      </form>
+    <div 
+      className="min-h-screen -m-8 p-8 flex items-center justify-center bg-[#0f172a] bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2000&auto=format&fit=crop')` }}
+    >
+      {/* Dark overlay mesh */}
+      <div className="absolute inset-0 bg-slate-950/70 z-0"></div>
+
+      <div className="max-w-xl w-full relative z-10 backdrop-blur-xl bg-slate-900/60 p-10 rounded-3xl shadow-2xl border border-slate-700/50">
+        <h2 className="text-3xl font-bold mb-2 text-white">Initialize Ledger Sync</h2>
+        <p className="text-slate-400 mb-8 text-sm">Upload Bank and Ledger statements to trigger the AI-driven reconciliation engine.</p>
+        
+        <form onSubmit={handleUpload} className="space-y-8">
+          <div className="relative group p-4 border-2 border-dashed border-slate-600 rounded-2xl hover:border-cyan-500 transition-colors bg-slate-800/30">
+            <label className="block text-sm font-semibold text-slate-300 mb-3">Bank Transactions Source (CSV)</label>
+            <input 
+              type="file" 
+              accept=".csv" 
+              onChange={e => setBankFile(e.target.files[0])} 
+              className="block w-full text-sm text-slate-400 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-cyan-500/10 file:text-cyan-400 hover:file:bg-cyan-500/20 file:transition-colors cursor-pointer" 
+            />
+          </div>
+          
+          <div className="relative group p-4 border-2 border-dashed border-slate-600 rounded-2xl hover:border-emerald-500 transition-colors bg-slate-800/30">
+            <label className="block text-sm font-semibold text-slate-300 mb-3">Internal Ledger Source (CSV)</label>
+            <input 
+              type="file" 
+              accept=".csv" 
+              onChange={e => setLedgerFile(e.target.files[0])} 
+              className="block w-full text-sm text-slate-400 file:mr-4 file:py-2.5 file:px-5 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-emerald-500/10 file:text-emerald-400 hover:file:bg-emerald-500/20 file:transition-colors cursor-pointer" 
+            />
+          </div>
+          
+          <button 
+            type="submit" 
+            disabled={loading} 
+            className="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-lg text-sm font-bold text-slate-900 bg-gradient-to-r from-cyan-500 to-emerald-400 hover:from-cyan-400 hover:to-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 disabled:opacity-50 transition-all transform hover:-translate-y-1"
+          >
+            {loading ? 'Processing Neural Matching...' : 'Initialize AI Reconciliation'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

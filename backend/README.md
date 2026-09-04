@@ -1,2 +1,2 @@
-# AI Finance Controller Backend
+# FinSentry Backend
 Run `pip install -r requirements.txt` and `uvicorn app.main:app --reload`
